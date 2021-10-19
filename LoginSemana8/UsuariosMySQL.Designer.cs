@@ -50,8 +50,10 @@ namespace LoginSemana8
             this.bprimero = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtIdusuario = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -79,21 +81,21 @@ namespace LoginSemana8
             // lstnivel
             // 
             this.lstnivel.FormattingEnabled = true;
-            this.lstnivel.Location = new System.Drawing.Point(369, 180);
+            this.lstnivel.Location = new System.Drawing.Point(369, 200);
             this.lstnivel.Name = "lstnivel";
             this.lstnivel.Size = new System.Drawing.Size(181, 28);
             this.lstnivel.TabIndex = 35;
             // 
             // txtclave
             // 
-            this.txtclave.Location = new System.Drawing.Point(369, 133);
+            this.txtclave.Location = new System.Drawing.Point(369, 155);
             this.txtclave.Name = "txtclave";
             this.txtclave.Size = new System.Drawing.Size(181, 26);
             this.txtclave.TabIndex = 34;
             // 
             // txtusuario
             // 
-            this.txtusuario.Location = new System.Drawing.Point(369, 84);
+            this.txtusuario.Location = new System.Drawing.Point(369, 112);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(181, 26);
             this.txtusuario.TabIndex = 33;
@@ -101,7 +103,7 @@ namespace LoginSemana8
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(263, 180);
+            this.label3.Location = new System.Drawing.Point(263, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 20);
             this.label3.TabIndex = 32;
@@ -110,7 +112,7 @@ namespace LoginSemana8
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(263, 133);
+            this.label2.Location = new System.Drawing.Point(263, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 31;
@@ -119,7 +121,7 @@ namespace LoginSemana8
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(263, 84);
+            this.label1.Location = new System.Drawing.Point(263, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 30;
@@ -133,6 +135,7 @@ namespace LoginSemana8
             this.bactualizar.TabIndex = 29;
             this.bactualizar.Text = "Actualizar";
             this.bactualizar.UseVisualStyleBackColor = true;
+            this.bactualizar.Click += new System.EventHandler(this.bactualizar_Click);
             // 
             // bguardar
             // 
@@ -152,6 +155,7 @@ namespace LoginSemana8
             this.bsalir.TabIndex = 27;
             this.bsalir.Text = "Salir";
             this.bsalir.UseVisualStyleBackColor = true;
+            this.bsalir.Click += new System.EventHandler(this.bsalir_Click);
             // 
             // bmodificar
             // 
@@ -171,6 +175,7 @@ namespace LoginSemana8
             this.beliminar.TabIndex = 25;
             this.beliminar.Text = "Eliminar";
             this.beliminar.UseVisualStyleBackColor = true;
+            this.beliminar.Click += new System.EventHandler(this.beliminar_Click);
             // 
             // bnuevo
             // 
@@ -217,6 +222,7 @@ namespace LoginSemana8
             this.bprimero.TabIndex = 20;
             this.bprimero.Text = "Primero";
             this.bprimero.UseVisualStyleBackColor = true;
+            this.bprimero.Click += new System.EventHandler(this.bprimero_Click);
             // 
             // pictureBox1
             // 
@@ -238,12 +244,13 @@ namespace LoginSemana8
             this.dataGridView1.Size = new System.Drawing.Size(293, 279);
             this.dataGridView1.TabIndex = 38;
             // 
-            // textBox1
+            // txtbuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(635, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 26);
-            this.textBox1.TabIndex = 39;
+            this.txtbuscar.Location = new System.Drawing.Point(635, 78);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(181, 26);
+            this.txtbuscar.TabIndex = 39;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // button1
             // 
@@ -255,14 +262,32 @@ namespace LoginSemana8
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtIdusuario
+            // 
+            this.txtIdusuario.Location = new System.Drawing.Point(369, 78);
+            this.txtIdusuario.Name = "txtIdusuario";
+            this.txtIdusuario.Size = new System.Drawing.Size(181, 26);
+            this.txtIdusuario.TabIndex = 41;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(263, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 20);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "Idusuario";
+            // 
             // UsuariosMySQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(940, 497);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtIdusuario);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbuscar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.label4);
@@ -318,7 +343,9 @@ namespace LoginSemana8
         private System.Windows.Forms.Button bprimero;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtIdusuario;
+        private System.Windows.Forms.Label label5;
     }
 }
