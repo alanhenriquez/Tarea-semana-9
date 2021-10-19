@@ -30,7 +30,6 @@ namespace LoginSemana8
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosMySQL));
-            this.button11 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lstnivel = new System.Windows.Forms.ComboBox();
             this.txtclave = new System.Windows.Forms.TextBox();
@@ -57,16 +56,6 @@ namespace LoginSemana8
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(12, 15);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 57);
-            this.button11.TabIndex = 37;
-            this.button11.Text = "Inicio";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // label4
             // 
@@ -274,9 +263,9 @@ namespace LoginSemana8
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(263, 81);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
+            this.label5.Size = new System.Drawing.Size(23, 20);
             this.label5.TabIndex = 42;
-            this.label5.Text = "Idusuario";
+            this.label5.Text = "Id";
             // 
             // UsuariosMySQL
             // 
@@ -289,7 +278,6 @@ namespace LoginSemana8
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtbuscar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button11);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lstnivel);
             this.Controls.Add(this.txtclave);
@@ -322,8 +310,6 @@ namespace LoginSemana8
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox lstnivel;
         private System.Windows.Forms.TextBox txtclave;

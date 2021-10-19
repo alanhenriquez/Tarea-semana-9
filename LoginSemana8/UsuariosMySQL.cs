@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
+
 namespace LoginSemana8
 {
     public partial class UsuariosMySQL : Form
@@ -20,10 +21,9 @@ namespace LoginSemana8
         {
             InitializeComponent();
         }
-
-        //static string conexion = "SERVER"
         private void UsuariosMySQL_Load(object sender, EventArgs e)
         {
+            txtIdusuario.Enabled = false;
             txtusuario.Enabled = false;
             txtclave.Enabled = false;
             lstnivel.Enabled = false;
@@ -44,18 +44,18 @@ namespace LoginSemana8
                 MessageBox.Show("Error de conexion", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
         }
-
+       
         private void bnuevo_Click(object sender, EventArgs e)
         {
+            txtIdusuario.Enabled = true;
             txtusuario.Enabled = true;
             txtclave.Enabled = true;
             lstnivel.Enabled = true;
             txtusuario.Text = "";
             txtclave.Text = "";
             lstnivel.Text = "Seleccione nivel";
-            txtusuario.Focus();
+            txtIdusuario.Focus();
             bnuevo.Visible = false;
             bguardar.Visible = true;
         }
@@ -66,8 +66,9 @@ namespace LoginSemana8
                 try
                 {
                     MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
-                    string myInsertQuery = "INSERT INTO usuarios(nombre,clave,nivel) Values(?nombre,?clave,?nivel)";
+                    string myInsertQuery = "INSERT INTO usuarios(Idusuario,nombre,clave,nivel) Values(?Idusuario,?nombre,?clave,?nivel)";
                     MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
+                    myCommand.Parameters.Add("?Idusuario", MySqlDbType.Int32, 10).Value = txtIdusuario.Text;
                     myCommand.Parameters.Add("?nombre", MySqlDbType.VarChar, 50).Value = txtusuario.Text;
                     myCommand.Parameters.Add("?clave", MySqlDbType.VarChar, 50).Value = txtclave.Text;
                     myCommand.Parameters.Add("?nivel", MySqlDbType.Int32, 10).Value = lstnivel.Text;
@@ -102,15 +103,16 @@ namespace LoginSemana8
                 lstnivel.Enabled = false;
                 bnuevo.Focus();
             }
-            }
+        }
 
         private void bmodificar_Click(object sender, EventArgs e)
         {
+            txtIdusuario.Enabled = true;
             txtusuario.Enabled = true;
             txtclave.Enabled = true;
             lstnivel.Enabled = true;
 
-            txtusuario.Focus();
+            txtIdusuario.Focus();
             bmodificar.Visible = false;
             bactualizar.Visible = true;
 
@@ -169,7 +171,7 @@ namespace LoginSemana8
                 {
 
                     MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
-                    string myInsertQuery = "DELETE FROM usuarios where Idusuario = '" + Convert.ToInt32(txtusuario.Text) + "' ";
+                    string myInsertQuery = "DELETE FROM usuarios where nombre = '" + txtusuario.Text + "' ";
                     MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
                     myCommand.Connection = myConnection;
@@ -207,13 +209,13 @@ namespace LoginSemana8
                 {
                     MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
 
-                    
+                    string Idusuario = txtIdusuario.Text.ToString();
                     string nombre = txtusuario.Text.ToString();
                     string clave = txtclave.Text.ToString();
                     string nivel = lstnivel.Text.ToString();
 
 
-                    string MyInsertQuery = "UPDATE usuarios SET nombre = '" + nombre + "' clave = '" + clave + "', nivel = '" + nivel + "'  WHERE nombre ='" + txtusuario.Text + "'";
+                    string MyInsertQuery = "UPDATE usuarios SET Idusuario = '" + Idusuario + "'  nombre = '" + nombre + "' clave = '" + clave + "', nivel = '" + nivel + "'  WHERE Idusuario ='" + txtIdusuario.Text + "'";
 
                     MySqlCommand myCommand = new MySqlCommand(MyInsertQuery);
 
@@ -221,7 +223,7 @@ namespace LoginSemana8
                     myConnection.Open();
                     myCommand.ExecuteNonQuery();
                     myCommand.Connection.Close();
-                    MessageBox.Show("Usuario Actializado con exito", "Actualizacon completa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuario Actializado con exito", "Actualizacion completa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     string consulta = "select * from usuarios";
 

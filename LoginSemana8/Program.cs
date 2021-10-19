@@ -15,7 +15,7 @@ namespace LoginSemana8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UsuariosMySQL());
+            Application.Run(new Login());
         }
     }
 }
