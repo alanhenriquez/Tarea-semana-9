@@ -116,7 +116,7 @@ namespace LoginSemana8
             bmodificar.Visible = false;
             bactualizar.Visible = true;
 
-            usuario_modificar = txtusuario.Text.ToString();
+            usuario_modificar = txtIdusuario.Text.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -208,22 +208,19 @@ namespace LoginSemana8
                 try
                 {
                     MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
-
-                    string Idusuario = txtIdusuario.Text.ToString();
-                    string nombre = txtusuario.Text.ToString();
-                    string clave = txtclave.Text.ToString();
-                    string nivel = lstnivel.Text.ToString();
-
-
-                    string MyInsertQuery = "UPDATE usuarios SET Idusuario = '" + Idusuario + "'  nombre = '" + nombre + "' clave = '" + clave + "', nivel = '" + nivel + "'  WHERE Idusuario ='" + txtIdusuario.Text + "'";
-
-                    MySqlCommand myCommand = new MySqlCommand(MyInsertQuery);
-
+                    string myInsertQuery = "UPDATE usuarios SET Idusuario=?Idusuario, nombre=?nombre, clave=?clave, nivel=?nivel WHERE Idusuario=?Idusuario";
+                    MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
+                    myCommand.Parameters.Add("?Idusuario", MySqlDbType.Int32, 10).Value = txtIdusuario.Text;
+                    myCommand.Parameters.Add("?nombre", MySqlDbType.VarChar, 50).Value = txtusuario.Text;
+                    myCommand.Parameters.Add("?clave", MySqlDbType.VarChar, 50).Value = txtusuario.Text;
+                    myCommand.Parameters.Add("?nivel", MySqlDbType.Int32, 10).Value = lstnivel.Text;
                     myCommand.Connection = myConnection;
                     myConnection.Open();
                     myCommand.ExecuteNonQuery();
                     myCommand.Connection.Close();
-                    MessageBox.Show("Usuario Actializado con exito", "Actualizacion completa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MessageBox.Show("Usuario actualizado con exito", "Ok", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
                     string consulta = "select * from usuarios";
 
@@ -233,18 +230,21 @@ namespace LoginSemana8
                     da.Fill(ds, "sistema");
                     dataGridView1.DataSource = ds;
                     dataGridView1.DataMember = "sistema";
-                }
-                catch (System.Exception)
-                {
-                    MessageBox.Show("El usuario no se puede actualizar ", " Actualizacion incompleta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                bmodificar.Visible = true;
-                bactualizar.Visible = false;
 
+                }
+                catch (MySqlException)
+                {
+                    MessageBox.Show("Usuario no actualizado", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                bnuevo.Visible = true;
+                bmodificar.Visible = true;
+                bguardar.Visible = false;
+                txtIdusuario.Enabled = false;
                 txtusuario.Enabled = false;
                 txtclave.Enabled = false;
                 lstnivel.Enabled = false;
-
+                bnuevo.Focus();
             }
         }
 

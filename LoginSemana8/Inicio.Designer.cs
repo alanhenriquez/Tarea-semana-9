@@ -33,7 +33,10 @@ namespace LoginSemana8
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.saludoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosAccessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosMySQLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conversorDePesoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,8 +48,6 @@ namespace LoginSemana8
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.usuariosAccessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosMySQLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@ namespace LoginSemana8
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saludoToolStripMenuItem,
+            this.bitacoraToolStripMenuItem,
             this.usuariosToolStripMenuItem,
             this.calculadoraToolStripMenuItem,
             this.conversorDePesoToolStripMenuItem,
@@ -86,6 +88,13 @@ namespace LoginSemana8
             this.saludoToolStripMenuItem.Text = "Saludo";
             this.saludoToolStripMenuItem.Click += new System.EventHandler(this.saludoToolStripMenuItem_Click);
             // 
+            // bitacoraToolStripMenuItem
+            // 
+            this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
+            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(91, 29);
+            this.bitacoraToolStripMenuItem.Text = "Bitacora";
+            this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
+            // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -95,6 +104,20 @@ namespace LoginSemana8
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            // 
+            // usuariosAccessToolStripMenuItem
+            // 
+            this.usuariosAccessToolStripMenuItem.Name = "usuariosAccessToolStripMenuItem";
+            this.usuariosAccessToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.usuariosAccessToolStripMenuItem.Text = "Usuarios Access";
+            this.usuariosAccessToolStripMenuItem.Click += new System.EventHandler(this.usuariosAccessToolStripMenuItem_Click);
+            // 
+            // usuariosMySQLToolStripMenuItem
+            // 
+            this.usuariosMySQLToolStripMenuItem.Name = "usuariosMySQLToolStripMenuItem";
+            this.usuariosMySQLToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.usuariosMySQLToolStripMenuItem.Text = "Usuarios MySQL";
+            this.usuariosMySQLToolStripMenuItem.Click += new System.EventHandler(this.usuariosMySQLToolStripMenuItem_Click);
             // 
             // calculadoraToolStripMenuItem
             // 
@@ -192,20 +215,6 @@ namespace LoginSemana8
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // usuariosAccessToolStripMenuItem
-            // 
-            this.usuariosAccessToolStripMenuItem.Name = "usuariosAccessToolStripMenuItem";
-            this.usuariosAccessToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.usuariosAccessToolStripMenuItem.Text = "Usuarios Access";
-            this.usuariosAccessToolStripMenuItem.Click += new System.EventHandler(this.usuariosAccessToolStripMenuItem_Click);
-            // 
-            // usuariosMySQLToolStripMenuItem
-            // 
-            this.usuariosMySQLToolStripMenuItem.Name = "usuariosMySQLToolStripMenuItem";
-            this.usuariosMySQLToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.usuariosMySQLToolStripMenuItem.Text = "Usuarios MySQL";
-            this.usuariosMySQLToolStripMenuItem.Click += new System.EventHandler(this.usuariosMySQLToolStripMenuItem_Click);
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -251,5 +260,6 @@ namespace LoginSemana8
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ToolStripMenuItem usuariosAccessToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosMySQLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
     }
 }

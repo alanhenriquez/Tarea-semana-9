@@ -73,5 +73,12 @@ namespace LoginSemana8
 
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Inicio f3 = new Inicio();
+            f3.Show();
+            this.Hide();
+        }
     }
 }

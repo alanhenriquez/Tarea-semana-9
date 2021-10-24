@@ -121,5 +121,12 @@ namespace LoginSemana8
             f1.Show();
             this.Hide();
         }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitacora f1 = new Bitacora();
+            f1.Show();
+            this.Hide();
+        }
     }
 }
