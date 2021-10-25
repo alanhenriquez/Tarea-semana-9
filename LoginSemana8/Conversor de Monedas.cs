@@ -76,5 +76,10 @@ namespace LoginSemana8
                 this.Hide();
             }
         }
+
+        private void Conversor_de_Monedas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

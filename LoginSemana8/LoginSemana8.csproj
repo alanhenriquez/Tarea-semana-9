@@ -90,6 +90,12 @@
       <DependentUpon>Calculadora.cs</DependentUpon>
     </Compile>
     <Compile Include="clases\clsOpcion1.cs" />
+    <Compile Include="ConsultaB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaB.Designer.cs">
+      <DependentUpon>ConsultaB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conversor de Monedas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calculadora.resx">
       <DependentUpon>Calculadora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaB.resx">
+      <DependentUpon>ConsultaB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Conversor de Monedas.resx">
       <DependentUpon>Conversor de Monedas.cs</DependentUpon>

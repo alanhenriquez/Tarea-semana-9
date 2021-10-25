@@ -236,6 +236,7 @@ namespace LoginSemana8
             this.Name = "Conversor_de_Monedas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conversor de Monedas";
+            this.Load += new System.EventHandler(this.Conversor_de_Monedas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -343,5 +343,12 @@ namespace LoginSemana8
                 btnnuevo.Focus();
             }
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ConsultaB f1 = new ConsultaB();
+            f1.Show();
+            this.Hide();
+        }
     }
 }
